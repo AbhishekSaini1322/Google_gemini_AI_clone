@@ -37,23 +37,57 @@
 
 .sidebar .recent-title{
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
 
+.sidebar .recent-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+}
+
+.sidebar .recent-empty{
+    font-size: 13px;
+    color: #888;
+    padding: 8px 10px;
+    margin: 0;
 }
 
 .sidebar .recent-entry{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     gap: 10px;
     padding: 10px;
-    padding-right: 40px;
+    padding-right: 14px;
     border-radius: 50px;
     color: #282828;
     cursor: pointer;
 }
 
-.sidebar .recent-entry:hover{
+.sidebar .recent-entry p{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+    word-break: break-word;
+    max-height: 2.7em;
+    overflow: hidden;
+}
+
+.sidebar .recent-entry:not(.recent-entry-active):hover{
     background-color: #e2e6eb;
+}
+
+.sidebar .recent-entry-active{
+    background-color: #dce3ea;
+}
+
+.sidebar .recent-entry-active:hover{
+    background-color: #d3dae4;
 }
 
 .bottom{
